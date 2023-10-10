@@ -1,3 +1,5 @@
+package ejemplos;
+
 import java.io.IOException;
 
 public class Ejemplo1 {
