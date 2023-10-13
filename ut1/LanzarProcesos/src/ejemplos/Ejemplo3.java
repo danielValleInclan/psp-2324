@@ -4,9 +4,8 @@ import java.io.*;
 
 public class Ejemplo3 {
     public static void main(String[] args) throws IOException {
-        File dir = new File("out/production/LanzarProcesos/ejemplos");
-        ProcessBuilder processBuilder = new ProcessBuilder("java", "Ejemplo2");
-        processBuilder.directory(dir);
+        ProcessBuilder processBuilder = new ProcessBuilder("java", "ejemplos.Ejemplo2");
+        //processBuilder.directory(new File("ut1/LanzarProcesos/out/production/LanzarProcesos/ejemplos"));
         Process process = processBuilder.start();
         try {
             InputStream inputStream = process.getInputStream();
