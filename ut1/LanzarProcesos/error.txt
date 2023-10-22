@@ -1,0 +1,1 @@
+bash: línea 7: lsst: orden no encontrada

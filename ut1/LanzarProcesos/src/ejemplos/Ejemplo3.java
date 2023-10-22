@@ -4,22 +4,23 @@ import java.io.*;
 
 public class Ejemplo3 {
     public static void main(String[] args) throws IOException {
-        ProcessBuilder processBuilder = new ProcessBuilder("java", "ejemplos.Ejemplo2");
-        //processBuilder.directory(new File("ut1/LanzarProcesos/out/production/LanzarProcesos/ejemplos"));
-        Process process = processBuilder.start();
+        File directory = new File("out/production/LanzarProcesos/");
+        ProcessBuilder pb = new ProcessBuilder("java", "ejemplos.Ejemplo2");
+        pb.directory(directory);
+        System.out.printf("Directorio de trabajo: %s", pb.directory());
+        System.out.println();
+        Process p = pb.start();
         try {
-            InputStream inputStream = process.getInputStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                // Imprimir cada línea del resultado de Ejemplo2
-                System.out.println("Salida de Ejemplo2: " + linea);
+            InputStream is = p.getInputStream();
+            int c;
+            while ((c = is.read()) != -1){
+                System.out.print((char) c);
             }
-            int exitCode = process.waitFor();
-            System.out.println("Ejemplo2 ha terminado con código de salida: " + exitCode);
-        } catch (IOException | InterruptedException exception){
-            exception.printStackTrace();
+            is.close();
+            int exitCode = p.waitFor();
+            System.out.println("El proceso ha terminado con código de salida: " + exitCode);
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
