@@ -1,4 +1,4 @@
-package actividades.cta.act4;
+package compruebatuaprendizaje.act4;
 
 public class Argumentos {
     public static void main(String[] args) {

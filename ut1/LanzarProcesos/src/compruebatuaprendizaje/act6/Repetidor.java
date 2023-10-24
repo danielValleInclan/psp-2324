@@ -1,4 +1,4 @@
-package actividades.cta.act5;
+package compruebatuaprendizaje.act6;
 
 public class Repetidor {
     public static void main(String[] args) {

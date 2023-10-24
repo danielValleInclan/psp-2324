@@ -1,4 +1,4 @@
-package actividades;
+package compruebatuaprendizaje;
 
 public class Actividad1_4 {
     public static void main(String[] args) {

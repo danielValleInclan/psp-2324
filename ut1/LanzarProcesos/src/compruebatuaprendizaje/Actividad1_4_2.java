@@ -1,11 +1,11 @@
-package actividades;
+package compruebatuaprendizaje;
 
 import java.io.*;
 
 public class Actividad1_4_2 {
     public static void main(String[] args) throws IOException {
         File directory = new File("out/production/LanzarProcesos/");
-        ProcessBuilder pb = new ProcessBuilder("java", "actividades.Actividad1_4", "Daniel");
+        ProcessBuilder pb = new ProcessBuilder("java", "compruebatuaprendizaje.Actividad1_4", "Daniel");
         pb.directory(directory);
         System.out.printf("Directorio de trabajo: %s", pb.directory());
         Process p = pb.start();

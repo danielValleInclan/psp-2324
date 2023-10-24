@@ -1,7 +1,6 @@
-package actividades.cta.act7;
+package compruebatuaprendizaje.act7;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -9,7 +8,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         File directory = new File("out/production/LanzarProcesos");
-        ProcessBuilder pb = new ProcessBuilder("java", "actividades.cta.act7.Leer");
+        ProcessBuilder pb = new ProcessBuilder("java", "compruebatuaprendizaje.act7.Leer");
         pb.directory(directory);
         Process p = pb.start();
         InputStream is = p.getInputStream();
