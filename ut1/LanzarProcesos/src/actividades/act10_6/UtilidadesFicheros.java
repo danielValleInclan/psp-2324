@@ -22,6 +22,7 @@ public class UtilidadesFicheros {
     //Fin de getPrintWriter
     }
 
+    // Convierte líneas de un fichero en una lista de cadenas
     public static ArrayList<String> getLineasFichero(String nombreFichero) throws IOException {
         ArrayList<String> lineas = new ArrayList<String>();
         BufferedReader bfr = getBufferedReader(nombreFichero);
@@ -45,7 +46,7 @@ public class UtilidadesFicheros {
         for (String nombreFichero : listaNombresFichero) {
             try {
                 //Recuperamos todas las lineas
-                lineas = getLineasFichero(nombreFichero);
+                lineas = getLineasFichero("./src/UT1/ContabilidadDepartamentos/" + nombreFichero);
                 //Pero solo nos interesa la primera
                 lineaCantidad = lineas.get(0);
                 //Convertimos la linea a número

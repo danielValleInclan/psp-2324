@@ -1,0 +1,2 @@
+Error: no se ha encontrado o cargado la clase principal .actividades.act10_6.ProcesadorFichero
+Causado por: java.lang.ClassNotFoundException: /actividades/act10_6/ProcesadorFichero
