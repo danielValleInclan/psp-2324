@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MyHilo extends Thread{
     private int cont = 0;
-    private boolean comprobacion = false;
+    private boolean stopHilo = false;
     private SolicitaSuspender suspender = new SolicitaSuspender();
 
     public void Suspender() {suspender.set(true);}
@@ -12,7 +12,7 @@ public class MyHilo extends Thread{
     public void Reanuda() {suspender.set(false);}
 
     public void stopHilo(){
-        comprobacion = true;
+        stopHilo = true;
     }
 
     public int getCont(){
@@ -21,10 +21,9 @@ public class MyHilo extends Thread{
 
     public void run(){
         try {
-            while (!comprobacion){ // haya trabajo por hacer
-                System.out.println(cont);
-                cont++;
+            while (!stopHilo){ // haya trabajo por hacer
                 sleep(1000);
+                cont++;
                 suspender.esperandoParaReanudar(); // comprobar
             }
             System.out.println("Fin del bucle");
@@ -35,19 +34,20 @@ public class MyHilo extends Thread{
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean b = false;
         String op;
         MyHilo h = new MyHilo();
-        while (!b){
-            System.out.println("Introduce la cadena (S/R) (* salir)");
-            op = sc.next();
+        h.start();
+        while (h.isAlive()){
+            System.out.println("Salida hilo: " + h.getCont());
+            System.out.println("Introduce la cadena (Suspender S / Reanudar R) (* salir)");
+            op = sc.next().toLowerCase();
             if (op.equals("s")){
                 h.Suspender();
             } else if (op.equals("r")) {
                 h.Reanuda();
             } else if (op.equals("*")) {
-                b = true;
                 h.stopHilo();
+                break;
             }
         }
     }
