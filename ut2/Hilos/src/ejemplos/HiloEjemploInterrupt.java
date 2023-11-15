@@ -8,7 +8,7 @@ public class HiloEjemploInterrupt extends Thread{
                 Thread.sleep(10);
             }
         } catch (InterruptedException e) {
-            System.out.println("Ha ocurrido un erro");
+            System.out.println("Ha ocurrido un error");
         }
         System.out.println("Fin del Hilo");
     }
