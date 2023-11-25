@@ -1,4 +1,4 @@
-package actividades.act10;
+package actividades.pro_com_vers3;
 
 public class Consumidor extends Thread {
     private Cola cola;

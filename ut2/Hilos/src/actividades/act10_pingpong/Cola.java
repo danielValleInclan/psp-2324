@@ -1,10 +1,10 @@
-package actividades.act10;
+package actividades.act10_pingpong;
 
 public class Cola {
-    private int numero;
+    private String cad;
     private boolean disponible = false;
 
-    public synchronized void get(int n){
+    public synchronized String get(){
         while (!disponible){
             try {
                 wait();
@@ -13,10 +13,10 @@ public class Cola {
             }
         }
         disponible = false;
-        System.out.println("\t" +numero + "=> Consumidor: " + n + ", consume: " + numero);
         notifyAll();
+        return cad;
     }
-    public synchronized void put(int valor, int n){
+    public synchronized void put(String cad){
         while (disponible){
             try {
                 wait();
@@ -24,9 +24,8 @@ public class Cola {
                 throw new RuntimeException(e);
             }
         }
-        numero = valor;
+        this.cad = cad;
         disponible = true;
-        System.out.println(numero + "=> Productor: " + n + ", produce: " + valor);
         notifyAll();
     }
 }

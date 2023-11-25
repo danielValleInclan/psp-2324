@@ -1,39 +1,35 @@
-package actividades.act10_orden;
+package actividades.pro_com_vers3;
 
 public class Cola {
     private int numero;
+    private int turno = 1;
     private boolean disponible = false;
-    private boolean turno = true;
 
-    public synchronized int get(int n){
-        while (!disponible ||  !turno){
+    public synchronized void get(int n){
+        while (!disponible || turno!=n){
             try {
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("\t" + numero + "=> Consumidor: " + n + ", consume: " + numero);
+        if (turno == 1) turno = 2;
+        else turno = 1;
         disponible = false;
-        if (turno){
-            turno = false;
-        } else {
-            turno = true;
-        }
+        System.out.println("\t" +turno + "=> Consumidor: " + n + ", consume: " + numero);
         notifyAll();
-        return numero;
     }
     public synchronized void put(int valor, int n){
-        while (disponible || !turno){
+        while (disponible || turno != n){
             try {
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println(valor + "=> Productor: " + n + ", produce: " + valor);
         numero = valor;
         disponible = true;
+        System.out.println(numero + "=> Productor: " + n + ", produce: " + valor);
         notifyAll();
     }
 }

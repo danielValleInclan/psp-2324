@@ -1,4 +1,4 @@
-package actividades.act10_orden;
+package actividades.pro_com_vers3;
 
 public class Productor extends Thread {
     private Cola cola;
@@ -13,7 +13,6 @@ public class Productor extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             cola.put(i, n);
-            //System.out.println(i + "=> Productor: " + n + ", produce: " + i);
             try {
                 sleep(100);
             } catch (InterruptedException e) {

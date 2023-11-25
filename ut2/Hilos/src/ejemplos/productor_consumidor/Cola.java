@@ -4,7 +4,7 @@ public class Cola {
     private int numero;
     private boolean disponible = false;
 
-    public synchronized int get(){
+    public synchronized void get(int n){
         while (!disponible){
             try {
                 wait();
@@ -13,10 +13,10 @@ public class Cola {
             }
         }
         disponible = false;
+        System.out.println(numero + "=> Consumidor: " + n + ", consume: " + numero);
         notify();
-        return numero;
     }
-    public synchronized void put(int valor){
+    public synchronized void put(int valor, int n){
         while (disponible){
             try {
                 wait();
@@ -26,6 +26,7 @@ public class Cola {
         }
         numero = valor;
         disponible = true;
+        System.out.println(numero + "=> Productor: " + n + ", produce: " + valor);
         notify();
     }
 }

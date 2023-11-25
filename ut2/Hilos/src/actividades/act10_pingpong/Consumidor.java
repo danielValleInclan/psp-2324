@@ -1,4 +1,4 @@
-package actividades.act10_orden;
+package actividades.act10_pingpong;
 
 public class Consumidor extends Thread {
     private Cola cola;
@@ -11,10 +11,8 @@ public class Consumidor extends Thread {
 
     @Override
     public void run() {
-        int valor = 0;
         for (int i = 0; i < 5; i++) {
-            valor = cola.get(n);
-            //System.out.println("\t" +i + "=> Consumidor: " + n + ", consume: " + valor);
+            System.out.println(cola.get());
         }
     }
 }

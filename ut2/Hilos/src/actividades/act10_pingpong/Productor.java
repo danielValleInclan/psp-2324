@@ -1,4 +1,4 @@
-package actividades.act10;
+package actividades.act10_pingpong;
 
 public class Productor extends Thread {
     private Cola cola;
@@ -12,7 +12,8 @@ public class Productor extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            cola.put(i, n);
+            if (i % 2 == 0) cola.put("PING");
+            else cola.put("PONG");
             try {
                 sleep(100);
             } catch (InterruptedException e) {

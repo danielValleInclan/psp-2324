@@ -12,8 +12,7 @@ public class Productor extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            cola.put(i);
-            System.out.println(i + "=> Productor: " + n + ", produce: " + i);
+            cola.put(i, n);
             try {
                 sleep(100);
             } catch (InterruptedException e) {
