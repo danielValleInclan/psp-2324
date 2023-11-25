@@ -20,8 +20,10 @@ public class Productor extends Thread {
             while (!((s = bf.readLine()) == null)){
                 cola.put(s);
             }
+            cola.put(s);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("\nFin productor");
     }
 }
