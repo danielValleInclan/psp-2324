@@ -10,7 +10,7 @@ public class Cola {
 
 
 	public synchronized int get(int i, int n) {
-		while ((disponible==false) || (n!=turno))
+		while ((!disponible) || (n!=turno))
 		{
 			try {
 				wait();
@@ -32,7 +32,7 @@ public class Cola {
 
 	
 	public synchronized void put(int valor, int n) {
-		while ((disponible == true) || (n!=turno)) {
+		while ((disponible) || (n!=turno)) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
