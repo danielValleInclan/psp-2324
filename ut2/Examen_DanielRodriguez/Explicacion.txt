@@ -1,0 +1,20 @@
+
+CLASES PERSONA:
+    Ambas clases Persona1 y Persona2 heredan de la clase Thread y comparten la clase CuentaBancaria. En el caso de Persona1
+    ejecuta el método ingresar de la clase CuentaBancaria y Persona2 ejecuta 3 veces reintegro de CuentaBancaria.
+
+    Cuando, por ejemplo, Persona1 intente ejecutar ingreso primero tendrá que esperar, si es el caso, a que Persona2 termine
+    de ejecutar reintegro, y viceversa, ya que ambos métodos tienen la característica syncronize.
+
+CLASE CUENTABANCARIA_:
+
+    El funcionamiento de ambos métodos, ingreso y reintegro, es el mismo, solo que uno de ellos ingresa y el otro retira dinero del saldo,
+    o lo que es lo mismo, resta del saldo y suma al saldo.
+
+    Primero se comprueba si el orden es correcto gracias a la flag disponible; esta flag (booleano) se utiliza para
+    mantener el orden de concurrencia entre los dos métodos. Si el valor no concuerda hilo se bloquea y al bloquearse permite
+    al otro hilo ejecutar se méto, el cual cambiará el valor de la flag y llamara al hilo bloqueado el cual, ahora sí,
+    podrá ejecutar su método.
+
+    También existe una comprobación dentro de ambos métodos en los cuales se comprueba si se puede o no realizar la operación.
+    En el caso del reintegro si el saldo es negativo y el ingreso si es más alto que el máximo.
