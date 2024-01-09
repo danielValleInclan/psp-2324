@@ -1,0 +1,54 @@
+
+ Por favor, dame el primer número de la operación. 
+
+ ¿Que operación desea hacer? (Solo coloque un signo)
+Teniendo en cuenta que: 
+ + = sumar 
+ - = restar 
+ x = multiplicar 
+ / = dividir 
+ * = elevar primer número al segundo numero.
+ % = residuo
+
+ Por favor, dame el segundo número.
+(5) / (4) = 1.25
+
+ ¿Desea hacer alguna otra operación? 
+
+ [s/n]
+
+ Por favor, dame el primer número de la operación. 
+
+ ¿Que operación desea hacer? (Solo coloque un signo)
+Teniendo en cuenta que: 
+ + = sumar 
+ - = restar 
+ x = multiplicar 
+ / = dividir 
+ * = elevar primer número al segundo numero.
+ % = residuo
+
+ Por favor, dame el segundo número.
+(2) * (3) = 8.0
+
+ ¿Desea hacer alguna otra operación? 
+
+ [s/n]
+
+ Por favor, dame el primer número de la operación. 
+
+ ¿Que operación desea hacer? (Solo coloque un signo)
+Teniendo en cuenta que: 
+ + = sumar 
+ - = restar 
+ x = multiplicar 
+ / = dividir 
+ * = elevar primer número al segundo numero.
+ % = residuo
+
+ Por favor, dame el segundo número.
+(4) + (6) = 10.0
+
+ ¿Desea hacer alguna otra operación? 
+
+ [s/n]
