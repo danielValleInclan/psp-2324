@@ -27,3 +27,125 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# Compiled Java class files
+*.class
+
+# Log files
+*.log
+
+# IntelliJ IDEA files
+.idea/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# Maven files
+target/
+
+# Compiled bytecode
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+
+# Ignore user-specific files
+*.iml
+*.iws
+*.ipr
+
+# Ignore generated files
+out/
+
+# Ignore macOS system files
+.DS_Store
+._*
+
+# Ignore Windows system files
+Thumbs.db
+Desktop.ini
+
+# Ignore Gradle files
+.gradle/
+build/
+
+# Ignore Maven wrapper files
+mvnw
+mvnw.cmd
+
+# Ignore node_modules (for Node.js projects)
+node_modules/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore compiled TypeScript files
+*.js
+*.js.map
+
+# Ignore compiled CSS files
+*.css
+
+# Ignore compiled SASS/SCSS files
+*.scss
+*.sass
+
+# Ignore compiled LESS files
+*.less
+
+# Ignore compiled Ruby files
+*.rb
+
+# Ignore compiled PHP files
+*.php
+*.phar
+
+# Ignore compiled C/C++ files
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.obj
+
+# Ignore compiled Swift files
+*.swiftc
+
+# Ignore compiled Kotlin files
+*.kotlin_module
+
+# Ignore compiled Rust files
+*.rlib
+
+# Ignore compiled Go files
+*.a
+*.o
+
+# Ignore compiled Objective-C files
+*.m
+*.mm
+*.dSYM/
+*.hmap
+
+# Ignore compiled Julia files
+*.ji
+*.jl
+
+# Ignore compiled Scala files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore compiled Erlang files
+*.beam
+
+# Ignore compiled Haskell files
+*.hi
+*.o
