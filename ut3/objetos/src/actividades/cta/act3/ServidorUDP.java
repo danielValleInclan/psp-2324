@@ -30,27 +30,37 @@ public class ServidorUDP {
             System.out.println("Id Alumno recibido: " + idalumno.trim());
             System.out.println("Puerto origen del mensaje: " + paqRecibidos.getPort());
 
-
+            boolean encontrado = false;
             for (Alumno a : alumnos){
                 if (a.getIdalumno().equals(idalumno)) {
-                    System.out.println("Enviando objeto Alumno al cliente");
-                    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-                    ObjectOutputStream out = new ObjectOutputStream(bs);
-                    out.writeObject(a);
-
-                    byte[] mensaje = bs.toByteArray();
-
-                    // Construyo el datagrama a enviar
-                    DatagramPacket envio = new DatagramPacket(mensaje, mensaje.length, InetAddress.getLocalHost(), paqRecibidos.getPort());
-
-                    //Envio datagrama
-                    socket.send(envio);
-                    bs.close();
-                    out.close();
+                    enviarAlumno(a, socket, paqRecibidos);
+                    encontrado = true;
                     break;
                 }
             }
-            System.out.println("No se ha encontrado ningún alumno con dicho id");
+            if (!encontrado) enviarAlumno(new Alumno(
+                    "null",
+                    "null",
+                    new Curso("null", "null"),
+                    0
+            ), socket, paqRecibidos);
         }
+    }
+
+    static void enviarAlumno(Alumno alumno, DatagramSocket socket, DatagramPacket paqRecibidos) throws IOException {
+        System.out.println("Enviando objeto Alumno al cliente");
+        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+        ObjectOutputStream out = new ObjectOutputStream(bs);
+        out.writeObject(alumno);
+
+        byte[] mensaje = bs.toByteArray();
+
+        // Construyo el datagrama a enviar
+        DatagramPacket envio = new DatagramPacket(mensaje, mensaje.length, InetAddress.getLocalHost(), paqRecibidos.getPort());
+
+        //Envio datagrama
+        socket.send(envio);
+        bs.close();
+        out.close();
     }
 }
