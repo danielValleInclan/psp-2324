@@ -71,7 +71,30 @@ class HiloServidorAdivina extends Thread{
                 // enviar datos al cliente
                 fsalida.reset();
                 fsalida.writeObject(datos);
+<<<<<<< HEAD
             } catch (I)
+=======
+            } catch (IOException n1){
+                System.out.println("Error escribiendo en flujo de salida del jugador " + identificador + " " +
+                        n1.getMessage());
+                break;
+            } catch (NullPointerException n) {
+                System.out.println("El jugador " + identificador + " ha desconectado ");
+                break;
+            }
+        }
+        if (objetoCompartido.haTerminado()){
+            System.out.println("EL JUEGO SE HA ACABADO ....");
+            System.out.println("\t==>Desconecta: " + identificador);
+        }
+        try {
+            fsalida.hashCode();
+            fentrada.close();
+            socket.close();
+        } catch (IOException e) {
+            System.out.println("Error en Hilo al cerrar cliente: " + identificador);
+            e.printStackTrace();
+>>>>>>> aa69997 (Haciendo ejemplo adivina)
         }
     }
 }
